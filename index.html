@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'none'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://api.github.com https://gitlab.com; img-src 'self' data: blob:; form-action 'none'; base-uri 'self';" />
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=(), payment=()" />
+
+    <title>SlayerOSINT - Cyber Surface & Leakage Hunter</title>
+
+    <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap">
+    <link rel="stylesheet" href="./assets/css/style.css">
+
+    <script type="module" src="./assets/js/script.js"></script>
+</head>
+
+<body>
+
+    <div class="container">
+        <header>
+            <h1>SlayerOSINT - Cyber Surface & Leakage Hunter</h1>
+            <p>Mecanismo centralizado de auditoria: código aberto, armazenamentos em nuvem, vazamentos de credenciais e
+                exposição de infraestrutura</p>
+        </header>
+
+        <div class="search-controls">
+            <div class="input-group">
+                <label for="globalQueryInput">Alvo / Expressão de Investigação</label>
+                <input type="text" id="globalQueryInput" class="field"
+                    placeholder="ex: zabbix_config, corp_backup, senha_mestra...">
+            </div>
+
+            <div class="input-group">
+                <label for="extensionFilter">Filtro de Extensão (Exclusivo Git)</label>
+                <select id="extensionFilter" class="field">
+                    <option value="">Qualquer Extensão</option>
+                    <option value="yaml">Configurações (.yaml, .yml)</option>
+                    <option value="json">Dados Estruturados (.json)</option>
+                    <option value="conf">Arquivos de Configuração (.conf)</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label for="targetEngine">Vetor de Varredura</label>
+                <select id="targetEngine" class="field">
+                    <option value="git">Código-Fonte (GitHub / GitLab)</option>
+                    <option value="cloud">Armazenamentos Cloud (GDrive / Dropbox / OneDrive)</option>
+                    <option value="leaks">Vazamentos & Infraestrutura (Pastes / Trello / Shodan)</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="action-bar">
+            <button id="btnExecute" class="btn btn-accent" type="button">
+                🔍 Varrer Repositórios Nativos Git
+            </button>
+            <button id="btnClear" class="btn btn-secondary" type="button">
+                🧹 Limpar / Nova Consulta
+            </button>
+        </div>
+
+        <div id="statusMessage" class="status-msg">Efetuando conexões de rede...</div>
+
+        <div class="results-box" id="resultsContainer">
+            <div class="results-header" id="resultsSummary">Resultados Consolidados</div>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="width: 140px;">Mecanismo/Vetor</th>
+                            <th>Entidade Encontrada / Link Estruturado</th>
+                            <th style="width: 160px; text-align: right;">Ação de Análise</th>
+                        </tr>
+                    </thead>
+                    <tbody id="resultsTableBody"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
