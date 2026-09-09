@@ -108,6 +108,16 @@ O repositório adota uma pipeline rigorosa de DevSecOps integrada ao GitHub Acti
 
 ---
 
+## ⚖️ Alerta de Uso Responsável (Disclaimer)
+
+Esta ferramenta foi desenvolvida exclusivamente para fins educacionais, acadêmicos e de conscientização sobre segurança da informação.
+
+O uso desta ferramenta para ocultação, transporte ou evasão de dados maliciosos, vazamento não autorizado de informações (Data Exfiltration) ou qualquer atividade ilegal é estritamente proibido.
+
+Os desenvolvedores não se responsabilizam pelo mau uso do software ou por quaisquer danos decorrentes da utilização indevida da ferramenta.
+
+---
+
 ## 📜 Licença
 
 Este projeto está sob a licença [MIT](LICENSE).
